@@ -1,0 +1,33 @@
+uuid: 77476ef1-4966-41ab-9ce0-d7865a1db150
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_module
+    - system
+    - user
+  theme:
+    - olivero
+id: olivero_useremail
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: custom_module_user_email
+settings:
+  id: custom_module_user_email
+  label: 'User Email'
+  label_display: visible
+  provider: custom_module
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
