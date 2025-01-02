@@ -1,0 +1,20 @@
+uuid: 0749c4ba-03a5-491b-ae21-348b0ee84d92
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_module
+  theme:
+    - olivero
+id: olivero_lastthreearticles
+theme: olivero
+region: sidebar
+weight: -7
+provider: null
+plugin: custom_module_lastthreearticles
+settings:
+  id: custom_module_lastthreearticles
+  label: 'Last Three Articles'
+  label_display: visible
+  provider: custom_module
+visibility: {  }
