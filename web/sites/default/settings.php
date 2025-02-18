@@ -900,3 +900,8 @@ if (getenv('IS_DDEV_PROJECT') == 'true' && file_exists(__DIR__ . '/settings.ddev
 
 // Override the configuration folder
 $settings['config_sync_directory'] = '../config/sync';
+
+$settings['memcache']['servers'] = ['127.0.0.1:11211' => 'default'];
+$settings['memcache']['bins'] = ['default' => 'default'];
+$settings['memcache']['key_prefix'] = '';
+$settings['cache']['default'] = 'cache.backend.memcache';
