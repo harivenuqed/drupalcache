@@ -3,3 +3,4 @@ web/core/*
 web/sites/default/settings.ddev.php
 web/sites/default/files
 .history
+web/modules/contrib/*
