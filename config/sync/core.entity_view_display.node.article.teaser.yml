@@ -55,3 +55,4 @@ content:
 hidden:
   comment: true
   field_preference: true
+  langcode: true
