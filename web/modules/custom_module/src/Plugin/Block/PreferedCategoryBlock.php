@@ -91,36 +91,41 @@ final class PreferedCategoryBlock extends BlockBase implements ContainerFactoryP
       // Get the taxonomy term IDs (target_id).
       $preferences = $user->get('field_preference')->getValue();
 
-      $preference_ids = array_map(function($item) {
-        return $item['target_id'];
-      }, $preferences);
-
-      $query = $this->entityTypeManager->getStorage('node')->getQuery()
-        ->condition('status', 1) // Only published nodes
-        ->condition('type', 'article') // Only articles
-        ->condition('field_preference', $preference_ids, 'IN') // Only articles
-        ->sort('created', 'DESC') // Sort by newest first
-        ->accessCheck(FALSE); // Bypass access checks
-
-      $nids = $query->execute();
-      $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
-
-      foreach ($nodes as $node) {
-        $nodeids[] = 'node:' . $node->id();
-        $items[] = [
-          '#markup' => $node->toLink()->toString(), // Render the title as a link
-        ];
+      if($preferences) {
+        $preference_ids = array_map(function($item) {
+          return $item['target_id'];
+        }, $preferences);
+  
+        $query = $this->entityTypeManager->getStorage('node')->getQuery()
+          ->condition('status', 1) // Only published nodes
+          ->condition('type', 'article') // Only articles
+          ->condition('field_preference', $preference_ids, 'IN') // Only articles
+          ->sort('created', 'DESC') // Sort by newest first
+          ->accessCheck(FALSE); // Bypass access checks
+  
+        $nids = $query->execute();
+        $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
+  
+        foreach ($nodes as $node) {
+          $nodeids[] = 'node:' . $node->id();
+          $items[] = [
+            '#markup' => $node->toLink()->toString(), // Render the title as a link
+          ];
+        }
       }
-    }
 
+      return [
+        '#theme' => 'item_list',
+        '#items' => $items,
+        '#attributes' => ['class' => ['last-three-articles']],
+        '#cache' => [
+          'tags' => ['node_list'] + $nodeids, // Add cache tags to clear when nodes are updated
+          'contexts' => ['preferred_taxonomy'], // Custom cache context.
+        ],
+      ];
+    }
     return [
-      '#theme' => 'item_list',
-      '#items' => $items,
-      '#attributes' => ['class' => ['last-three-articles']],
-      '#cache' => [
-        'tags' => ['node_list'] + $nodeids, // Add cache tags to clear when nodes are updated
-        'contexts' => ['preferred_taxonomy'], // Custom cache context.
-      ],
+      '#markup' => "No content",
     ];
   }
 
