@@ -1,0 +1,30 @@
+uuid: 6add52e8-dea0-4107-b38d-0c413402742d
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_preference
+    - taxonomy.vocabulary.preference
+  module:
+    - user
+id: user.user.field_preference
+field_name: field_preference
+entity_type: user
+bundle: user
+label: Preference
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      preference: preference
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

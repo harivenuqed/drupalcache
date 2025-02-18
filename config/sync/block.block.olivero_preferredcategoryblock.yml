@@ -1,0 +1,20 @@
+uuid: 5a5ec4c7-f3f5-40be-9428-c0a812a0c339
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - custom_module
+  theme:
+    - olivero
+id: olivero_preferredcategoryblock
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: custom_module_preferred_category
+settings:
+  id: custom_module_preferred_category
+  label: 'Preferred Category Block'
+  label_display: visible
+  provider: custom_module
+visibility: {  }
