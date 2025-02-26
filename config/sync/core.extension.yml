@@ -1,6 +1,7 @@
 _core:
   default_config_hash: 4GIX5Esnc_umpXUBj4IIocRX7Mt5fPhm4AgXfE3E56E
 module:
+  admin_toolbar: 0
   announcements_feed: 0
   automated_cron: 0
   big_pipe: 0
@@ -37,6 +38,9 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  purge: 0
+  purge_tokens: 0
+  purge_ui: 0
   search: 0
   shortcut: 0
   system: 0
@@ -45,6 +49,8 @@ module:
   toolbar: 0
   update: 0
   user: 0
+  varnish_purge_tags: 0
+  varnish_purger: 0
   views_ui: 0
   views: 10
   standard: 1000
