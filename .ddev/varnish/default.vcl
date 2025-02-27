@@ -90,6 +90,9 @@ sub vcl_backend_response {
 }
 
 sub vcl_deliver {
+  # Set a header showing the number of cache hits for the object.
+  set resp.http.X-Cache-Hits = obj.hits;
+  
   # Optionally add a header to see if a response was served from cache.
   if (obj.hits > 0) {
     set resp.http.X-Cache = "HIT";

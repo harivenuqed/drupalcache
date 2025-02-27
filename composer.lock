@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fca097e26f5b0358045b21a99760c927",
+    "content-hash": "2f89fc8e614c09101fa05d8b781cef40",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1567,6 +1567,54 @@
                 "source": "https://github.com/drupal/core-recommended/tree/10.4.3"
             },
             "time": "2025-02-18T22:41:05+00:00"
+        },
+        {
+            "name": "drupal/http_cache_control",
+            "version": "2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/http_cache_control.git",
+                "reference": "8.x-2.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/http_cache_control-8.x-2.5.zip",
+                "reference": "8.x-2.5",
+                "shasum": "4fab2c60029bf84e5ebdd82d6759f58bd579018c"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.5",
+                    "datestamp": "1735304161",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "dieterholvoet",
+                    "homepage": "https://www.drupal.org/user/3567222"
+                },
+                {
+                    "name": "josh waihi",
+                    "homepage": "https://www.drupal.org/user/188162"
+                }
+            ],
+            "description": "Module for controlling HTTP Cache Control response headers.",
+            "homepage": "https://www.drupal.org/project/http_cache_control",
+            "support": {
+                "source": "https://git.drupalcode.org/project/http_cache_control"
+            }
         },
         {
             "name": "drupal/memcache",
