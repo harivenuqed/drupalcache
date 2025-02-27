@@ -14,5 +14,5 @@ cache:
     nocache: false
     nostore: false
   surrogate:
-    maxage: 0
+    maxage: 21600
     nostore: false

@@ -1,0 +1,25 @@
+uuid: 1370690c-8e64-4910-9f73-7b1dc540be88
+langcode: en
+status: true
+dependencies: {  }
+id: abe619023f
+name: 'Varnish purger cache tags'
+invalidationtype: tag
+hostname: drupal10cache.ddev.site/
+port: 80
+path: /
+request_method: BAN
+scheme: http
+verify: '1'
+headers:
+  -
+    field: Purge-Cache-Tags
+    value: '[invalidation:expression]'
+body: null
+body_content_type: null
+runtime_measurement: true
+timeout: 1.0
+connect_timeout: 1.0
+cooldown_time: 0.0
+max_requests: 100
+http_errors: true
